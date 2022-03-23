@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+html{
+  /* フォントサイズを100%で指定しておくことで、ユーザーがブラウザで設定したフォントサイズが正しく反映されます */
+  font-size: 100%;
+}
+body{
+  color: #383e45;
+  font-size: 0.9rem;
+}
+a{
+  /* 今回は、サイト内のリンクに下線が表示されないように設定します */
+  text-decoration: none;
+}
+img{
+  /* 画像が画面の横幅からはみ出るのを防ぐためにmaxサイズを設定します */
+  max-width: 100%;
+}
+li{
+  list-style: none;
+}
+/*
+h1タグ用
+line-height にh1タグの高さよりも小さい値「1px」を指定することで、
+h1タグの上下の余白が消えるため、ロゴ画像の高さと揃う
+「line-height: 0;」を指定してもOKです
+*/
+.site-title {
+  width: 120px;
+  line-height: 1px;
+  padding: 10px 0;
+}
+/* aタグのリンク範囲を親要素のサイズに広げます */
+.site-title a{
+  display: block;
+}
+/* h2タグ用 */
+.section-title{
+  display: inline-block;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: solid 1px #383e45;
+}
+/* h3タグ用 */
+.content-title{
+  font-size: 1rem;
+  margin: 10px 0;
+}
+/* 画面の最大幅を指定。共通で使用します */
+.about, .bicycle{
+  max-width: 960px;
+  margin: 0 auto 100px auto;
+  padding: 0 4%;
+  text-align: center;
+}
+
+/* h1とnavを横並びに配置します */
+/* 両端にそろえます */
+/* 高さを中央でそろえます */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+/* liタグ（メニュー）を横並びに配置します */
+header ul{
+  display: flex;
+  padding: 10px 0;
+}
+header li{
+  margin-left: 30px;
+}
+header li a{
+  color: #24292e;
+}
+/* メニューにマウスをのせた際に少し透過します。 */
+header li a:hover{
+  opacity: 0.7;
+}
+.mainvisual{
+  margin-bottom: 80px;
+}
+/* 画像の横幅サイズにあわせて最大幅を指定します */
+/* 縦の高さを固定します */
+/* 横幅は画面サイズにあわせて伸縮します */
+.mainvisual img{
+  width: 100%;
+  max-width: 1920px;
+  height: 600px;
+  object-fit: cover;
+}
+/* スマートフォンとPCの場合で適用するスタイルシートの変更 */
+
+/* 画像の高さをブラウザ下いっぱいまで広げます */
+/* 画像とテキストを縦並びに配置します */
+/* 画像を縦並びに配置します */
+/* 画像を横幅いっぱいまで表示します */
+@media screen and (max-width: 600px){
+  .mainvisual img{
+    height: calc(100vh - 60px);
+  }
+  .content{
+    flex-direction: column;
+  }
+  .about img{
+    margin-right: 0;
+  }
+  .bicycle ul{
+    flex-direction: column;
+  }
+  .bicycle li{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+/* 画像とテキストを横並びに配置します */
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 画像を丸く切り取ります。丸のサイズは上のwidthとheightで指定します */
+.about img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.text{
+  text-align: left;
+}
+/* 両端でそろえます */
+.bicycle ul{
+  display: flex;
+  justify-content: space-between;
+}
+.bicycle li{
+  width: 32%;
+}
+footer{
+  font-size: 0.5rem;
+  padding: 10px 0;
+  text-align: center;
+}
+
